@@ -1,0 +1,32 @@
+VRAAG 1:
+
+SELECT gene_name, (seq_region_end - seq_region_start + 1) AS lengte_gen FROM gene ORDER BY lengte_gen ASC LIMIT 1;
+
+naam gen: TRDD1
+lengte gen: 8
+
+
+VRAAG 2:
+
+SELECT gene_name,  COUNT(transcript_id) AS aantal_transcripten FROM gene JOIN transcript ON transcript.gene_id = gene.gene_id GROUP BY gene_name ORDER BY aantal_transcripten DESC LIMIT 1;
+
+naam gen: U6
+aantal transcripten: 1329
+
+VRAAG 3:
+
+SELECT chromosome, COUNT(*) AS total_genen FROM gene WHERE description LIKE '%cancer%' GROUP BY chromosome ORDER BY total_genen DESC LIMIT 1 OFFSET 1;
+
+chromosoom naam : chr9
+aantal exonen: 
+
+VRAAG 4:
+
+SELECT COUNT(*) FROM exon_transcript;
+aantal exon transcripten: 1 178 393
+
+SELECT COUNT(*) FROM exon;
+aantal exonen: 642 590 
+
+Waarom een verschil? 
+

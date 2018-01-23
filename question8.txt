@@ -1,0 +1,33 @@
+UNF = (Personnel_number, Name, Date_of_birth, Lab_code, {Research_code, Research_description, Research_suprivisor})
+
+Elke data in één object groeperen
+Niet genormaliseerd
+
+1NF: 
+Personnel(PersonnelID, number, Name, Date_of_birth)
+Research (ResearchID, codeID, DescriptionID, suprivisorID, LabID, PersonnelID)
+ResearchLab(LabID, Lab_code)
+ResearchCode (codeID, code)
+ResearchDescription (DescriptionID, description)
+ResearchSuprivisor (suprivisorID, suprivisor)
+
+Repeterende groepen in individuele tabbelen
+Aparte tabel voor gerelateerde data
+Elke tabel een primary key
+
+2NF:
+Personnel(PERSONNELID, number, Name, Date_of_birth)
+Research (RESEARCHID, CODEID, DESCRIPTIONID, SUPRIVISORID, LABID, PersonalID)
+ResearchLab(LABID, Lab_code)
+ResearchCode (CODEID, code)
+ResearchDescription (DESCRIPTIONID, description)
+ResearchSuprivisor (SUPRIVISORID, suprivisor)
+
+Elke niet-key is afhankelijk van de key
+
+3NF = 2NF
+
+Elke niet-key is onafhankelijk van elke niet-key
+
+primary_key = UPPERCASE 
+

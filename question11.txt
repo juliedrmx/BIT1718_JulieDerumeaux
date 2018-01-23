@@ -1,0 +1,24 @@
+VRAAG 1:
+
+> db.bioinf_mongo_examen.find({"drug" : 1, $or: [{"method_of_admission" : "TABLET", "method_of_admission" : "BUCCAL", "method_of_admission" : "SUBLINGUAL" }]});
+
+
+VRAAG 2:
+
+> db.bioinf_mongo_examen.find({ percentage_of_side_effects: { $gt: 12 } } , {"drug" : 1 }); 
+
+aantal : 12
+
+
+VRAAG 3:
+
+> db.bioinf_mongo_examen.aggregate( [ { $group: { _id: "$company", count: { $avg: "$percentage_of_side_effects" } } }, { $match: { count: { $gt: 10 } } }, { $sort: { count: -1 } } ] );
+
+namen bedrijven:
+Watson Pharmaceuticals, Inc., Durata Therapeutics, Inc., Galderma Laboratories, L.P
+
+VRAAG 4:
+
+> db.bioinf_mongo_examen.aggregate( [ { $group: { _id: "$company", min: { $first: "$percentage_of_side_effects" }, max : { $last: "$percentage_of_side_effects"} } } ] )
+
+
