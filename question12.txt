@@ -1,0 +1,8 @@
+VRAAG 1:
+
+curl 'https://rest.ensembl.org/map/id/rs4224828/1..1000?' -H 'Content-type:application/json'
+
+VRAAG 2:
+
+$ curl 'http://rest.ensembl.org/sequence/region/mouse/Notch1:1..100?type=genomic' -H 'Content-type:text/x-fasta'
+
